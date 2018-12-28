@@ -34,8 +34,10 @@ class Solution:
             ans=max(ans,min(height[p1],height[p2])*(p2-p1))
             
             if height[p1]<height[p2]:
+                # while height[p1+1]<height[p1]:
                 p1+=1
             else:
+                # while height[p2-1]<height[p2]:
                 p2-=1
         
         return ans
