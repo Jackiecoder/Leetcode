@@ -1,7 +1,7 @@
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         # quick-select
-        # time O(nlogn), worst case O(n^2), space O(1)
+        # time O(n), worst case O(n^2), space O(1)
         if k > len(nums):
             return -1
         return self.quick_select(nums, 0, len(nums) - 1, k)
