@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class lc1047 {
     public String removeDuplicates(String S) {
         if (S == null || S.length() == 0) {
             return new String();
