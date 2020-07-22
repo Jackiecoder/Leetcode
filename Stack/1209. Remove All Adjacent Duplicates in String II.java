@@ -1,13 +1,15 @@
+import java.util.*;
+
 class Solution {
-    public String removeDuplicates(String s, int k) {
+    public String removeDuplicates(final String s, final int k) {
         if (s == null || s.length() == 0) {
             return new String();
         }
-        Stack<Character> stackChar = new Stack<>();
-        Stack<Integer> stackInt = new Stack<>();
-        for (char c : s.toCharArray()) {
+        final Stack<Character> stackChar = new Stack<>();
+        final Stack<Integer> stackInt = new Stack<>();
+        for (final char c : s.toCharArray()) {
             if (!stackChar.isEmpty() && stackChar.peek() == c) {
-                int times = stackInt.pop();
+                final int times = stackInt.pop();
                 if (times + 1 == k) {
                     stackChar.pop();
                 } else {
@@ -21,11 +23,11 @@ class Solution {
         // System.out.println(stackChar);
         // System.out.println(stackInt);
 
-        StringBuilder sb = new StringBuilder();
+        final StringBuilder sb = new StringBuilder();
         while (!stackChar.isEmpty()) {
-            char c = stackChar.pop();
-            int times = stackInt.pop();
-            String str = Character.toString(c);
+            final char c = stackChar.pop();
+            final int times = stackInt.pop();
+            final String str = Character.toString(c);
             sb.append(str.repeat(times));
         }
         return sb.reverse().toString();
