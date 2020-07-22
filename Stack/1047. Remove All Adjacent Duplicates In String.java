@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 class Solution {
@@ -6,7 +5,7 @@ class Solution {
         if (S == null || S.length() == 0) {
             return new String();
         }
-        Stack<Character> stack = new Stack();
+        Stack<Character> stack = new Stack<>();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < S.length(); i++) {
             if (!stack.isEmpty() && stack.peek() == S.charAt(i)) {
