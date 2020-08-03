@@ -37,3 +37,24 @@ class Solution:
             else:
                 cur = 0
         return summ
+
+
+class Solution:
+    def numberOfArithmeticSlices(self, A: List[int]) -> int:
+        # find the length of longest arithmetic slices
+        # for each A[i] -> find out if A[i] - A[i - 1] == A[i + 1] - A[i]
+        #   if true: length += 1
+        #   else:   length = 2
+
+        # max_length = 2
+        cur_length = 2
+        res = 0
+        for index in range(1, len(A) - 1):
+            if A[index] - A[index - 1] == A[index + 1] - A[index]:
+                cur_length += 1
+                # max_length = max(max_length, cur_length)
+            else:
+                res += (1 + (cur_length - 2)) * (cur_length - 2) // 2
+                cur_length = 2
+        res += (1 + (cur_length - 2)) * (cur_length - 2) // 2
+        return res
