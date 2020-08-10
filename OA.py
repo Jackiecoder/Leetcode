@@ -1,18 +1,27 @@
-def mario(mission):
-    # dp[i] = max(dp[j] + mission[j] * mission[i] * (i - j))
-    # time O(n^2), space O(n)
-    if not mission:
-        return 0
-
-    dp = [0] * len(mission)
-
-    for i in range(len(mission)):
-        for j in range(i):
-            dp[i] = max(dp[i], dp[j] + mission[i] *
-                        mission[j] * ((i - j) ** 2))
-    return max(dp) if max(dp) > 0 else 0
+class TreeNode:
+    def __init__(self, value):
+        self.val = value
+        self.left = None
+        self.right = None
 
 
-testcase = [1, 10, -1, 0, 0, 0, -20]
-res = mario(testcase)
-print(res)
+def findMissingValue(root: ListNode):
+    self.missingRange = None
+
+
+def findNodeRange(root, left, right):
+    if not root.val:
+        self.missingRange = [left, right]
+    if not root.left and not root.right:
+        return root.val
+    if not root.left:
+        self.findNodeRange(root.right, left, root.val)
+
+
+'''
+        5
+    -       8 
+  1   4 
+ N 2 
+
+'''
