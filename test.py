@@ -1,39 +1,26 @@
-import collections
+arr1 = [10, 80, 30, 90, 40, 50, 70]
+arr2 = [10, 20, 20, 20, 10, 0, 0, 0, 10, 20]
 
 
-def droppedRequests(requestTime):
-    '''
-    [1,1,1,1, 100,100,100,100]
-    lookup = {
-        1: 4,
-        100: 4
-    }
-    '''
-    if len(requestTime) <= 3:
-        return 0
-    counter = collections.Counter(requestTime)
-    drop = 0
-    for time in sorted(counter):
-        # 3 request in one second
-        if counter[time] > 3:
-            counter[time] = 3
-        # find previous 10 sec
-        tmp = 0
-        for sec in range(9, -1, -1):
-            tmp += counter.get(time - sec, 0)
-            if tmp >= 10:
-                counter[time] = 0
-                break
-        counter[time] = min(counter[time], 10 - tmp)
-        # find previous 60 sec
-        tmp = 0
-        for sec in range(59, -1, -1):
-            tmp += counter.get(time - sec, 0)
-            if tmp >= 60:
-                counter[time] = 0
-                break
-        counter[time] = min(counter[time], 60 - tmp)
-    return len(requestTime) - sum(counter.values())
+def quickSort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        quickSort(arr, low, pi - 1)
+        quickSort(arr, pi + 1, high)
 
 
-testcase = [1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7]
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = low - 1
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
+
+
+arr = arr2
+print(arr)
+quickSort(arr, 0, len(arr) - 1)
+print(arr)
