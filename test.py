@@ -24,3 +24,5 @@ arr = arr2
 print(arr)
 quickSort(arr, 0, len(arr) - 1)
 print(arr)
+for i in [None]:
+    print(i)
