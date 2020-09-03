@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="BinarySearch" Database="" Version="10000">
-  <Project Name="lc81" Path="lc81/lc81.project" Active="No"/>
-  <Project Name="lc33" Path="lc33/lc33.project" Active="Yes"/>
+  <Project Name="lc81" Path="lc81/lc81.project" Active="Yes"/>
+  <Project Name="lc33" Path="lc33/lc33.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
