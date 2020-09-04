@@ -1,6 +1,4 @@
+from collections import defaultdict
 
-x = 10
-while x < 5:
-    x -= 1
-else:
-    print('Good')
+a = defaultdict(lambda x: x)
+print(a[4])
