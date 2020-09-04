@@ -54,6 +54,21 @@ class UnionFind1:
 
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
+        # find the smallest starter
+        num_set = set(nums)
+        max_streak = 0
+        for num in nums:
+            if num - 1 not in num_set:
+                cur_streak = 1
+                while num + 1 in num_set:
+                    # Although there is a nested while loop, but the overall run time of all while loop will be O(n),
+                    # Thus Time = O(n + n) = O(n)
+                    num += 1
+                    cur_streak += 1
+                max_streak = max(max_streak, cur_streak)
+        return max_streak
+
+    def longestConsecutive_unionFind2(self, nums: List[int]) -> int:
         # Union find
         # combine continuous numbers into one set.
         # 1. travel through the nums
@@ -75,7 +90,7 @@ class Solution:
             val_to_index[num] = i
         return uf.max_rank
 
-    def longestConsecutive1(self, nums: List[int]) -> int:
+    def longestConsecutive_unionFind1(self, nums: List[int]) -> int:
         # Union find
         # combine continuous numbers into one set.
         # 1. travel through the nums
