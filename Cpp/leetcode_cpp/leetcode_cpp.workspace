@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="leetcode_cpp" Database="" Version="10000">
+  <Project Name="lc88" Path="lc88/lc88.project" Active="No"/>
+  <Project Name="lc33" Path="lc33/lc33.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="lc88" ConfigName="Debug"/>
+      <Project Name="lc33" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="lc88" ConfigName="Release"/>
+      <Project Name="lc33" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
