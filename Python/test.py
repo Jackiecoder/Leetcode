@@ -1,4 +1,7 @@
 from collections import defaultdict
 
-a = defaultdict(lambda: 5)
-print(a[None])
+a, b = [1, 2], [3, 4]
+c = [a, b]
+print(c)
+a[0] = 10
+print(c)
