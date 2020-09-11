@@ -10,7 +10,6 @@ class Solution:
             return 1
         res = 1
         while n > 1:
-            print(x, res, n)
             if n % 2 == 1:
                 # odd
                 n -= 1
