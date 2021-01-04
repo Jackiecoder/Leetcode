@@ -25,7 +25,7 @@ class Solution:
         # method 2
         return self.dfs(root, p, q)
 
-    def dfs(self, node, p, q
+    def dfs(self, node, p, q):
         # because this node must exist, so once we find a valid node, we can return this node immediately.
         if not node:
             return None
@@ -40,17 +40,16 @@ class Solution:
         if right:
             return right
 
-
     def dfs1(self, node, p, q, found):
         if not node:
             return None, 0
-        left, left_found=self.dfs(node.left, p, q, found)
-        right, right_found=self.dfs(node.right, p, q, found)
+        left, left_found = self.dfs(node.left, p, q, found)
+        right, right_found = self.dfs(node.right, p, q, found)
         if left_found == 2:
             return left, 2
         if right_found == 2:
             return right, 2
-        found=1 if node is p or node is q else 0
+        found = 1 if node is p or node is q else 0
         found += left_found + right_found
         if found == 2:
             return node, found
